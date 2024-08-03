@@ -4,73 +4,13 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Formulário de Validação</title>
-        <style>
-          body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f4f4f9;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        form {
-            background-color: #ffffff;
-            border: 1px solid #ddd;
-            border-radius: 12px;
-            padding: 20px;
-            width: 100%;
-            max-width: 400px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
-        h1 {
-            margin-bottom: 20px;
-            color: #333;
-            font-size: 24px;
-        }
-        label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: bold;
-            color: #555;
-        }
-        input[type="number"] {
-            width: calc(100% - 20px);
-            padding: 10px;
-            margin: 5px 0 20px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            font-size: 16px;
-        }
-        button {
-            background-color: #007bff;
-            color: #ffffff;
-            border: none;
-            padding: 12px 20px;
-            border-radius: 8px;
-            font-size: 16px;
-            cursor: pointer;
-            transition: background-color 0.3s, box-shadow 0.3s;
-        }
-        button:hover {
-            background-color: #0056b3;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-            .message {
-                margin-top: 10px;
-                font-weight: bold;
-            }
-            .valid {
-                color: green;
-            }
-            .invalid {
-                color: red;
-            }
-        </style>
+        <link rel="stylesheet" href="/main.css">
     </head>
     <body>
-        <h1>Formulário de Validação</h1>
+        
+        <div class="form-container">
+            <h1>Formulário de Validação</h1>
+            
         <form id="myForm">
             <label for="campoA">Campo A:</label>
             <input type="number" id="campoA" name="campoA" required>
@@ -80,26 +20,9 @@
             <br><br>
             <button type="button" onclick="validateForm()">Submeter</button>
         </form>
+        </div>
         <div id="message" class="message"></div>
     
-        <script>
-            function validateForm() {
-                // Obter os valores dos campos
-                const campoA = parseFloat(document.getElementById('campoA').value);
-                const campoB = parseFloat(document.getElementById('campoB').value);
-    
-                // Obter o elemento para mostrar a mensagem
-                const messageElement = document.getElementById('message');
-    
-                // Verificar a condição e exibir a mensagem apropriada
-                if (campoB > campoA) {
-                    messageElement.textContent = 'Formulário válido! Campo B é maior que Campo A.';
-                    messageElement.className = 'message valid';
-                } else {
-                    messageElement.textContent = 'Formulário inválido. Campo B deve ser maior que Campo A.';
-                    messageElement.className = 'message invalid';
-                }
-            }
-        </script>
+        <script src="./main.js"></script>
     </body>
     </html>
